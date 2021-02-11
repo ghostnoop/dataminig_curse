@@ -1,1 +1,1 @@
-# dataminig_curse
+# datamining_curse
