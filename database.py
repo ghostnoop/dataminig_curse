@@ -29,7 +29,7 @@ class TopWords(ConfigurableDB):
 
 
 async def preapare_db(*args, **kwargs):
-    pool = await asyncpg.create_pool(user="mart", password="postgres",
+    pool = await asyncpg.create_pool(user="marat", password="postgres",
                                      database="datamining", host="localhost")
 
     TopWords.configurate(pool)
