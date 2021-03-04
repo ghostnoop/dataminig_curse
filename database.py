@@ -15,7 +15,7 @@ class TopWords(ConfigurableDB):
     CREATE_TABLE = (
         "CREATE TABLE IF NOT EXISTS top_words "
         "( "
-        "id SERIAL PRIMARY KEY "
+        "id SERIAL PRIMARY KEY, "
         "text VARCHAR(256),"
         "result_of INTEGER "
         "); "
