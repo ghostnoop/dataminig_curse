@@ -3,17 +3,11 @@ import itertools
 import asyncio
 
 import database
+import settings as cfg
 
 
-# tkn = ""
 
-vk_session = vk_api.VkApi(token=tkn)
-vk = vk_session.get_api()
-# print(vk.wall.post(message='Hello world!'))
-domain = 'itis_kfu'
-
-
-def get_top_words():
+def get_top_words(vk, domain):
     top_words = {}
 
     for i in range(2):
@@ -38,10 +32,15 @@ def get_top_words():
 
 async def worker():
     await database.preapare_db()
-    top_words = get_top_words()
-    # for k,v in top_words.items():
 
+    vk_session = vk_api.VkApi(token=cfg.APP_VK_TOKEN)
+    vk = vk_session.get_api()
+    domain = 'itis_kfu'
 
+    top_words = get_top_words(vk, domain)
+    await database.TopWords.clear_table()
+    for k, v in top_words.items():
+        await database.TopWords.create(k, v)
 
 
 asyncio.run(worker())
