@@ -32,15 +32,17 @@ def get_top_words(vk, domain):
 
 async def worker():
     await database.preapare_db()
-
+    print('db ready')
     vk_session = vk_api.VkApi(token=cfg.APP_VK_TOKEN)
     vk = vk_session.get_api()
     domain = 'itis_kfu'
 
     top_words = get_top_words(vk, domain)
+    print('all words got')
     await database.TopWords.clear_table()
     for k, v in top_words.items():
         await database.TopWords.create(k, v)
+    print('finish')
 
 
 asyncio.run(worker())
