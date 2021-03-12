@@ -18,7 +18,7 @@ args = {
 
 with DAG(dag_id='vk_parser_dagger', default_args=args, schedule_interval=None) as dag:
     parse_vk_wall = PythonOperator(
-        task_id='download_titanic_dataset',
+        task_id='vk_parsing',
         python_callable=worker,
         dag=dag
     )
