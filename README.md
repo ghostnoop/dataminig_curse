@@ -1,5 +1,7 @@
 # datamining_curse
 
+**Запуск даггера**
+
 1. `pip install apache-airflow`
 
 2. `export AIRFLOW_HOME=~/airflow/`
@@ -15,3 +17,7 @@
 7. `копируем airflow_dagger.py в папку dags`
 
 8. `airflow schedule` - чтобы ипортнулся наш даггер в airflow
+
+**Допольнительный материал**
+
+`https://khashtamov.com/ru/apache-airflow-introduction/`
