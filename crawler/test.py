@@ -1,9 +1,10 @@
 import json
+import math
 import sys
 
 import networkx as nx
 import matplotlib.pyplot as plt
-
+import numpy as np
 fname = 'data3.json'
 
 
@@ -56,6 +57,20 @@ def load_grapth():
     B = A / A.sum(axis=0)
     np.savetxt('array.out', B)
 
+def matrix():
+    x = a = np.matrix('1 2 1; 3 4 5')
+    print(x)
+    x:np.matrix
 
+    a,b  = x.shape
+    print(a,b)
 
-load_grapth()
+def float_to_mini_float():
+    a = 3.811258289353455e-48
+    b=round(a,50)
+    print(b)
+
+float_to_mini_float()
+
+# matrix()
+# load_grapth()

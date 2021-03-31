@@ -4,6 +4,7 @@ import json
 import re
 
 import requests
+
 from bs4 import BeautifulSoup
 
 
@@ -64,8 +65,6 @@ def extractor_links(URL):
 
 def get_page_links_v2(url, depth):
     main_link = {url: extractor_links(url)}
-    # all_links = {}
-    # all_links[URL] = extractor_links(URL)
     main_link = asyncio.run(consumer(main_link, url))
 
     links1 = main_link[url]
@@ -79,9 +78,11 @@ def get_page_links_v2(url, depth):
             )
         link1[list(link1.keys())[0]] = new_links2
 
-    with open('data3.json', 'w') as outfile:
+    with open('dataqqq.json', 'w') as outfile:
         json.dump(main_link, outfile)
+
     return main_link
+
 
 async def consumer(main_link, url):
     queue = asyncio.Queue()
@@ -93,7 +94,6 @@ async def consumer(main_link, url):
 
     while count < len(links):
         data = await queue.get()
-        # print(data, "data")
         link_: str = data['link']
         urls_: list = data['urls']
 
@@ -103,7 +103,7 @@ async def consumer(main_link, url):
         # print("done")
         count += 1
     main_link[url] = links
-    print(main_link)
+    # print(main_link)
     with open('data.json', 'w') as outfile:
         json.dump(main_link, outfile)
 
