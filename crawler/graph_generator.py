@@ -17,16 +17,31 @@ def generator_by_json(d):
                         for link___ in links3:
                             G.add_edge(link3, link___)
 
-
-
     plt.figure(figsize=(40, 40))
     options = {
         'node_color': 'red',
-        'node_size': 10,
+        'node_size': 12,
         'edge_color': 'blue',
-        'width': 0.08
+        'width': 0.05
     }
+    print('q')
+
+
+
     nx.write_gml(G, 'remote.gml')
 
     nx.draw_random(G, with_labels=False, **options)
     plt.savefig('foo.png')
+    # try:
+    #     plt.show()
+    # except:
+    #     pass
+
+
+if __name__ == '__main__':
+    # dataqqq.json
+    import json
+
+    with open('dataqqq.json') as json_file:
+        data = json.load(json_file)
+    generator_by_json(data)

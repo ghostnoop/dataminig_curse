@@ -5,15 +5,14 @@ import sys
 import networkx as nx
 import matplotlib.pyplot as plt
 import numpy as np
+
 fname = 'data3.json'
 
 
-def load(fname):
+def load(file_name):
     G = nx.MultiDiGraph()
-    d: dict = json.load(open(fname))
+    d: dict = json.load(open(file_name))
     for link, links in d.items():
-        # print(link, links)
-        # G.add_edges_from(link,)
         for link__ in links:
             link__: dict
             for link1, links1 in link__.items():
@@ -57,20 +56,36 @@ def load_grapth():
     B = A / A.sum(axis=0)
     np.savetxt('array.out', B)
 
+
 def matrix():
     x = a = np.matrix('1 2 1; 3 4 5')
     print(x)
-    x:np.matrix
+    x: np.matrix
 
-    a,b  = x.shape
-    print(a,b)
+    a, b = x.shape
+    print(a, b)
+
 
 def float_to_mini_float():
     a = 3.811258289353455e-48
-    b=round(a,50)
+    b = round(a, 50)
     print(b)
 
-float_to_mini_float()
 
+def sort_terst():
+    a = np.array([5, 2, 3])
+    b = np.sort(a)
+    print(b)
+    c = np.argsort(a)
+    print(c)
+
+def array_game():
+    a= [1,2,3,4,5,6,7,8,9,10,11,12,13]
+    print(a[-5:])
+
+# float_to_mini_float()
+
+# sort_terst()
+array_game()
 # matrix()
 # load_grapth()

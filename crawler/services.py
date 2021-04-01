@@ -100,10 +100,9 @@ async def consumer(main_link, url):
         links[links.index(link_)] = {link_: urls_}
 
         queue.task_done()
-        # print("done")
         count += 1
     main_link[url] = links
-    # print(main_link)
+
     with open('data.json', 'w') as outfile:
         json.dump(main_link, outfile)
 

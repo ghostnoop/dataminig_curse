@@ -5,8 +5,6 @@ from matrix_generator import matrix_from_graph
 from page_rank import summary_page_rank
 from services import get_page_links_v2
 
-# url = 'https://mangalib.me/otherworldly-evil-monarch?section=info'
-
 if __name__ == '__main__':
     print('start')
 
@@ -20,6 +18,6 @@ if __name__ == '__main__':
 
     generator_by_json(d)
 
-    matrix, height, width = matrix_from_graph()
+    matrix, height, width, G_LIST = matrix_from_graph()
 
-    summary_page_rank(matrix, height, width)
+    summary_page_rank(matrix, height, width, G_LIST)
