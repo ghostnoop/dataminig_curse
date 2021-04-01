@@ -17,12 +17,12 @@ def generator_by_json(d):
                         for link___ in links3:
                             G.add_edge(link3, link___)
 
-    plt.figure(figsize=(40, 40))
+    plt.figure(figsize=(30, 30))
     options = {
         'node_color': 'red',
         'node_size': 12,
         'edge_color': 'blue',
-        'width': 0.05
+        'width': 0.07
     }
     print('q')
 
