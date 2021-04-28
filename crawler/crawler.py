@@ -8,7 +8,7 @@ from services import get_page_links_v2
 if __name__ == '__main__':
     print('start')
 
-    URL = "https://spring.io/"
+    URL = "https://metanit.com/python/tutorial/"
 
     st = time.monotonic()
 

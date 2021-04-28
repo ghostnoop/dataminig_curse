@@ -15,6 +15,8 @@ def summary_page_rank(matrix, height, width, G_LIST):
     # Создаем вектор v
     v_vector = numpy.matrix([1 / n for i in range(height)])
 
+    print(v_vector)
+
     # Возводим в степень нашу матрицу и вектор умножаем на нее
     M_matrix_powed = M_matrix
     v_vector.dot(M_matrix_powed)
