@@ -1,3 +1,5 @@
+from pprint import pprint
+
 import numpy as np
 import math
 import zlib
@@ -73,8 +75,12 @@ def word_prob(word_t: str, cbf_size: int, salts_t: list, hashes_count: int):
 
 
 cbf = countable_bloom_filter(objects=unique_words, cbf_length=CBF_SIZE, hashes_count=COUNT_OF_HASH_FUNCS)
-print(cbf)
-
+s = ""
+for index, i in enumerate(cbf):
+    s += f"{i} "
+    if index % 100 == 0:
+        s += '\n'
+print(s)
 words = ['sensor', 'they', 'spectrometers', 'conventional', 'flashlight', 'expert', 'experience']
 
 for word in words:

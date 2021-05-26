@@ -1,3 +1,5 @@
-a = {'a': 1, 'b': 2}
-for k, v in a.items():
-    print(k, v)
+import pandas as pd
+
+d = {'col1': [1, 2], 'col2': [3,2]}
+df = pd.DataFrame(data=d)
+print(df)
